@@ -1,13 +1,13 @@
-package com.learn.java.ch11;
+package com.learn.java.Sep16;
 
 import java.util.Scanner;
 
-public class OverLoading {
-    static void addNum(int a,int b)
+public class OverLoadingMethods {
+    static void add(int a,int b)
     {
         System.out.println("Sum of two numbers is : "+(a+b));
     }
-    static void addNum(String a,String b)
+    static void add(String a,String b)
     {
         System.out.println("Concatination of two Strings is : "+(a+b));
     }
@@ -20,12 +20,12 @@ public class OverLoading {
             case 1:System.out.println("Enter two numbers : ");
             int a = sc.nextInt();
             int b = sc.nextInt();
-            addNum(a, b);
+            add(a, b);
             break;
             case 2:System.out.println("Enter two strings : ");
             String x = sc.next();
             String y = sc.next();
-            addNum(x, y);
+            add(x, y);
             break;
             default:
             System.out.println("Entered invalid value");
