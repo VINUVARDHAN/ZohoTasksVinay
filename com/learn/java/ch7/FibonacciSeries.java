@@ -5,6 +5,7 @@ public class FibonacciSeries {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the ending range");
         int n = sc.nextInt();
+        sc.close();
         int a=0,b=1;
         System.out.print(a+" ");
         for(;b<n;)
@@ -14,6 +15,5 @@ public class FibonacciSeries {
             a = b;
             b = temp + a;
         }
-        sc.close();
     }
 }

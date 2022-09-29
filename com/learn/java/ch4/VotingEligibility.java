@@ -7,7 +7,7 @@ public class VotingEligibility {
 		System.out.println("name: ");
 		String name = sc.nextLine();
 		System.out.println("gender: ");
-		char gender = sc.next().charAt(0);
+		//char gender = sc.next().charAt(0);
 		System.out.println("age: ");
 		short age = sc.nextShort();
 		if (age<18)

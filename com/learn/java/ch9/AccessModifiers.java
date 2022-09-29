@@ -26,6 +26,7 @@ class Modifiers{
     //protected method
     protected void protectedMethod()
     {
+        this.privateMethod();
         System.out.println("i am protected method");
     }
 }

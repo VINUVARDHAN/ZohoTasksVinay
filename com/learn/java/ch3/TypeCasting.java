@@ -3,17 +3,17 @@ package com.learn.java.ch3;
 public class TypeCasting {
 	public static void main(String args[])
 	{
-		//byte to int
+		//byte to integer
 		int a = 10;
-		//int to byte
+		//integer to byte
 		byte b =(byte) 128;
-		//int to float
+		//integer to float
 		float c = a;
-		//float to int
+		//float to integer
 		a =(int) c;
-		//int to long
+		//integer to long
 		long d = a;
-		//long to int
+		//long to integer
 		a = (int) 635467656;
 		//float to double 
 		double e = c;
@@ -35,5 +35,7 @@ public class TypeCasting {
 		String h = String.valueOf(f);
 		//string to char
 		f =h.charAt(0);
+		System.out.println(b);
+		System.out.println(d);
 	}
 }

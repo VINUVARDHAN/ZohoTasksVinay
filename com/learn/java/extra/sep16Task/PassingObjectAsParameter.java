@@ -7,7 +7,6 @@ public class PassingObjectAsParameter {
         Test t2 = new Test(b);
         t1.method1(t1);
         t2.method1(t2);
-        String n = "vinay";
     }
 }
 class Test{

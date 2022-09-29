@@ -10,7 +10,6 @@ public class PathSecure {
 			File user = new File("home/image/user");
 			System.out.print("Filepath of users : ");
 			user.getPath();
-			outer.inner n = new outer.inner();
 		}
 }
 class File{
@@ -27,14 +26,5 @@ class File{
 	void getPath()
 	{
 		System.out.println(filePath);
-	}
-}
-class outer{
-	int a =10;
-	static class inner{
-		void n()
-		{
-			a = 20;
-		}
 	}
 }
