@@ -5,6 +5,8 @@ public class Inheritance{
         OuterClass c = new OuterClass();
         OuterClass.InnerClass c1 = c.new InnerClass();
         OuterClass.InnerClass c2 = c.new InnerClass();
+        Object obj = c.getClass();
+        System.out.println(obj);
     }
 }
     class OuterClass{
@@ -22,7 +24,8 @@ public class Inheritance{
         }
         InnerClassInsideMethod i  = new InnerClassInsideMethod();
     }
-      class InnerClass{
+    class InnerClass
+    {
         InnerClass()
         {
             System.out.println("inner class method");

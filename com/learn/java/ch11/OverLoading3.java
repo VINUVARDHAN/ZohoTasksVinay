@@ -3,10 +3,14 @@ package com.learn.java.ch11;
  * Grand Parent Class
  */
 class GParent{
+	int a;
+	static int b;
     GParent(){
         System.out.println("G Parent constructor ");
     }
     {
+    	a= 10;
+    	b = 20;
         System.out.println("box grand ");
     }
 	static {
@@ -90,8 +94,8 @@ class Child extends Parent{
  */
 public class OverLoading3{
     public static void main(String[] args) {
-        new Child();
-       // c.c();
+        Child c = new Child();
+       c.c();
         //Parent p = new Parent();
         //p.p();
         //GParent g = new GParent();
