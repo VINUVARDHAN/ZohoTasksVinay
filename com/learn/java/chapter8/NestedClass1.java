@@ -22,6 +22,15 @@ class C1{
     {
         System.out.println("m in C1");
     }
+    static void m2()
+    {
+    	//local class
+    	//you can create inner local class inside both static and non static methods
+    	 class LocalInnerClass{
+    		 
+    	}
+    }
+    //inner class
     class C2{
         C2()
         {
@@ -54,6 +63,7 @@ class C1{
             }
         }
     }
+    //static class
     static class C4{
     	C4(){
     		System.out.println("c4 non static nested class constructor");

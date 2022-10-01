@@ -9,4 +9,14 @@ public class ImportingFiles2 {
 		{
 			System.out.println("Non Static method of class ImportingFiles ");
 		}
+		class InnerNonStatic{
+
+		}
+		static class InnerStatic{
+
+		}
+		public static void methodImport()
+		{
+			System.out.println("method inside Importing files");
+		}
 }

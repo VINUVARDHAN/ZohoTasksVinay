@@ -4,7 +4,7 @@ public class NestedClass2{
     public static void main(String[] args) {
         Outer.InnerStatic staticInner = new Outer.InnerStatic();
         Outer outer = new Outer();
-        Outer.InnerNonStatic nonStaticInner = outer.new InnerNonStatic();
+        Outer.InnerClass nonStaticInner = outer.new InnerClass();
         //you can't access the outerclass members using the instance variable of inner class
 
     }
@@ -24,8 +24,8 @@ class Outer{
     {
         System.out.println("m2 static method of outer");
     }
-    class InnerNonStatic {
-        InnerNonStatic()
+    class InnerClass {
+    	InnerClass()
         {
             System.out.println("Non static constructor");
         }
@@ -35,14 +35,10 @@ class Outer{
             m2();
             System.out.println("m3 non static method of non static inner class");
         }
-        //we cannot create a static method inside the non static inner class
-        //static void m4()
-        //{
-        //    System.out.println("m4 non static method of non");
-        //}
-        class C1{
-
-        }
+        /**
+         * you cannot create a static member inside the inner class
+         *
+         */
     }
     static class InnerStatic{
         static int m = 10;
@@ -59,7 +55,7 @@ class Outer{
             m2();
             System.out.println("m5 static method inside the static class");
         }
-        //create a non static class inside the static class
+        //create a inner class inside the static class
         class C1{
 
         }

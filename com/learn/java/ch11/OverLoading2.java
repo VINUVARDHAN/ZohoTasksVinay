@@ -16,12 +16,12 @@ class A{
 	
     A()
     {
-    	System.out.println("vfuivuevbkbvkviugfrvc");
+    	System.out.println("constructor A");
         
     }
     protected void finalize()
     {
-    	System.out.println("bhfiwyvfew");
+    	System.out.println("garbage collection");
     }
     
 }
