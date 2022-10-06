@@ -1,9 +1,17 @@
 package com.learn.java.Testing;
-public class Test2{
-	public static void main(String args[])
+interface vinay {
+	int i = 10;
+	static int j = 10;
+	public void main();
+	static void method()
 	{
-		Test1 t = new Test1();
-		System.out.println(t.m(10));
-		
+		System.out.println("csdhgvisdkv");
+	
+	}	
+}
+class Test2{
+	public static void main(String[] args)
+	{
+		vinay.method();
 	}
 }

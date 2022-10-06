@@ -1,7 +1,16 @@
 package com.learn.java.Testing;
 public class Test1 {
-	public int m(int i)
+	
+}
+class a {
+	void m()
 	{
-		return i*0;
+		
+	}
+}
+class b extends a{
+	static void m()
+	{
+		
 	}
 }

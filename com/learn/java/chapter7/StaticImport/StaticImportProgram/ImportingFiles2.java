@@ -19,4 +19,10 @@ public class ImportingFiles2 {
 		{
 			System.out.println("method inside Importing files");
 		}
+		static class NestedClass{
+			static void method()
+			{
+				System.out.println("method in nested class");
+			}
+		}
 }

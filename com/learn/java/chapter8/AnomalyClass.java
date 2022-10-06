@@ -10,9 +10,13 @@ class Polygon extends poly{
 	public void nothing(){
 		System.out.println("super can be used ");
 	}
-	   public void display() {
-	      System.out.println("Inside the Polygon class");
-	   }
+	public void display() {
+        System.out.println("Inside the Polygon class");
+	}
+	public static void method()
+	{
+		System.out.println("static method");
+	}
 	}
 
 	class AnonymousDemo {

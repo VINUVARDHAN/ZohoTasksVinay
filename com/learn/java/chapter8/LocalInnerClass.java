@@ -1,5 +1,5 @@
 package com.learn.java.chapter8;
-public class NestedClass1{
+public class LocalInnerClass{
     public static void main(String[] args) {
         C1 c1 = new C1();
         //creating a object for static nested class
@@ -26,6 +26,15 @@ class C1{
     {
     	//local class
     	//you can create inner local class inside both static and non static methods
+    	
+    	
+    	
+    	// ** final and abstract are permitted for local class
+    	//static class wfwe{
+    		
+    	//}
+    	
+    	
     	 class LocalInnerClass{
     		 
     	}
