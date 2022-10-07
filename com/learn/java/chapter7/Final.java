@@ -12,25 +12,25 @@ public class Final {
 class A{
     //we can only use the static block to initialize the values to static final variables
 	
-    private final static int STATICVARIABLE;
+    private final static int STATIC_VARIABLE;
     
     //we can initialize the value of final variable inside the constructor
     
-    private final int NONSTATICVARIABLE;
+    private final int NON_STATIC_VARIABLE;
     A()
     {
-    	NONSTATICVARIABLE = 10; 
+    	NON_STATIC_VARIABLE = 10; 
         System.out.println("non parameterized constructor");
     }
     A(final int val)
     {
-    	NONSTATICVARIABLE=10;
+    	NON_STATIC_VARIABLE=10;
     	System.out.println("parameterized constructor");
     }
     //you need to initialize the value for final keyword in each constructor
     //A(int i){}
     static{
-    	STATICVARIABLE = 20;
+    	STATIC_VARIABLE = 20;
     }
     final void method()
     {
