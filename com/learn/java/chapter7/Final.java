@@ -5,32 +5,32 @@ public class Final {
     public static void main(String[] args) {
         //you can't change the reference of object
     	//only final is permitted
-         final A a = new A();
-        //a = new B();
+         final A OBJECTNAME = new A();
+        //OBJECTNAME = new B();
     }
 }
 class A{
     //we can only use the static block to initialize the values to static final variables
 	
-    private final static int j;
+    private final static int STATICVARIABLE;
     
     //we can initialize the value of final variable inside the constructor
     
-    private final int i;
+    private final int NONSTATICVARIABLE;
     A()
     {
-        i = 10; 
+    	NONSTATICVARIABLE = 10; 
         System.out.println("non parameterized constructor");
     }
     A(final int val)
     {
-    	i=10;
+    	NONSTATICVARIABLE=10;
     	System.out.println("parameterized constructor");
     }
     //you need to initialize the value for final keyword in each constructor
     //A(int i){}
     static{
-        j = 20;
+    	STATICVARIABLE = 20;
     }
     final void method()
     {
