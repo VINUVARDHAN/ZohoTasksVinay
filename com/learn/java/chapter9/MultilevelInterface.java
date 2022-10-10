@@ -6,48 +6,46 @@ public class MultilevelInterface{
 	public static void main(String args[])
 	{
 		/**
-		 * 1. this mean that you can access the implementations of 
-		 * class name (Class) using the interface reference 
+		 * We can access the implementations of 
+		 * class_name (Class) using the interface reference 
 		 * variable "i" using below method
-		 * 2. can use variable of interface but no change
-		 * 
 		 */
 		
-		//111111
-		InterF2 i = new Class1();
-		i.method();
-		//222222
-		new Class1().m();
-		i.method();
+		//i1 can access only one method
+		InterF1 i1 = new Class();
+		i1.methodOfIF1();
+		//i2 can access only two method
+		InterF2 i2 = new Class();
+		i2.methodOfIF1();
+		i2.methodOfIF2();
+		//i3 can access only three method
+		InterF3 i3 = new Class();
+		i3.methodOfIF1();
+		i3.methodOfIF2();
+		i3.methodOfIF3();
 	}
 }
 interface InterF1{
-	void method1OfIF1();
-	void method();
-	static void m() {
-		System.out.println("m method in IF1");
+	void methodOfIF1();
 	}
-}
 interface InterF2 extends InterF1{
-	int i=0;
-	void method1OfIF2();
-	void method();
+	void methodOfIF2();
 }
-
-class Class1 implements InterF2{
-	public void method1OfIF2(){
-		System.out.println("class1");
-	}
-	public void method()
+interface InterF3 extends InterF2{
+	void methodOfIF3();
+}
+//Body of method also require for the methods in parent interface
+class Class implements InterF3{
+	public void methodOfIF3()
 	{
-		System.out.println("class1");
+		System.out.println("Interface 3");
 	}
-	public void m()
+	public void methodOfIF2()
 	{
-		System.out.println("class1");
+		System.out.println("Interface 2");
 	}
-	public void method1OfIF1()
+	public void methodOfIF1()
 	{
-		System.out.println("class1");
+		System.out.println("Interface 1");
 	}
 }

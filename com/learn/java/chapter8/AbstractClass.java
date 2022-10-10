@@ -1,6 +1,6 @@
 package com.learn.java.chapter8;
 
-public class AbstractClass{
+public final class AbstractClass{
 	public static void main(String args[])
 	{
 		/**
@@ -9,7 +9,7 @@ public class AbstractClass{
 		 */
 		
 		
-		//but A's reference variable can initiate with the extended classes of A that is B and C
+		//but A's reference variable 'a' can be initialized with extended classes of A that is B and C
 		A a = new B();
 		a.method();
 		
@@ -19,9 +19,15 @@ public class AbstractClass{
 	}
 }
 abstract class A{
-	abstract void method();
+	/**
+	 * Abstract class can have 
+	 * constructor,
+	 * blocks
+	 */
+	  abstract void method();
 }
 class B extends A{
+	//Require method declaration for all the methods in Abstract parent class in child class
 	void method()
 	{
  		System.out.println("class B extends A");
@@ -32,4 +38,8 @@ class C extends A{
 	{
 		System.out.println("class C extends A");
 	}
+}
+//Grand child class of abstract class can or cannot have the method body
+class D extends B{
+	
 }

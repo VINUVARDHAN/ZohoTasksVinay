@@ -10,9 +10,9 @@ class A1 implements Parent
     // parameterized constructor  
     A1(int x, int y)  
     {  
-          
+          System.out.println("Parameterized constructor");
     }  
-      
+    
     public void foo()  
     {  
         System.out.println("In the foo method of class A.");  

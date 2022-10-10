@@ -14,7 +14,7 @@ class A{
 	
     private final static int STATIC_VARIABLE;
     
-    //we can initialize the value of final variable inside the constructor
+    //we can initialize the value of final variable inside all the constructor
     
     private final int NON_STATIC_VARIABLE;
     A()
@@ -27,7 +27,7 @@ class A{
     	NON_STATIC_VARIABLE=10;
     	System.out.println("parameterized constructor");
     }
-    //you need to initialize the value for final keyword in each constructor
+    //you need to initialize the value of final keyword in each constructor
     //A(int i){}
     static{
     	STATIC_VARIABLE = 20;
