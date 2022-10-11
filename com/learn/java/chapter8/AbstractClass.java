@@ -1,6 +1,6 @@
 package com.learn.java.chapter8;
 
-public final class AbstractClass{
+class AbstractClass{
 	public static void main(String args[])
 	{
 		/**
@@ -20,7 +20,7 @@ public final class AbstractClass{
 }
 abstract class A{
 	/**
-	 * Abstract class can have 
+	 * Abstract class can also have 
 	 * constructor,
 	 * blocks
 	 */

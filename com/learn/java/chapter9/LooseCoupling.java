@@ -36,5 +36,9 @@ public static void main(String argvs[])
 // creating an object of class B  
 B1 obj = new B1();  
 obj.foo();  
+
+// creating an object of class A
+A1 obj1 = new A1(10, 20);
+obj1.foo();
 }  
 }  

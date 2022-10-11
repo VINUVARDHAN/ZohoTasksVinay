@@ -1,8 +1,8 @@
 package com.learn.java.chapter9;
 
 /**
- *  For two different interfaces having same method name implemented in single class 
- *  will be having single method body 
+ *  If two interface have same method name then the implementation 
+ *  will be similar to both of them
  */
 
 public class TwoInterfaceHaveSameMethodName implements InterfaceA,InterfaceB{

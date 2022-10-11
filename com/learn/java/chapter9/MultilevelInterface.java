@@ -6,9 +6,8 @@ public class MultilevelInterface{
 	public static void main(String args[])
 	{
 		/**
-		 * We can access the implementations of 
-		 * class_name (Class) using the interface reference 
-		 * variable "i" using below method
+		 * We can access only the corresponding implementations of 
+		 * interface
 		 */
 		
 		//i1 can access only one method

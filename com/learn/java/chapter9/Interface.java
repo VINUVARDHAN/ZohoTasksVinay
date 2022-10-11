@@ -1,5 +1,6 @@
 package com.learn.java.chapter9;
-public class Interface implements Example2{
+
+class Interface implements Example2{
     public static void main(String[] args) {
     	Example ex = new Interface();
     	//Example for overloading
@@ -19,11 +20,13 @@ public class Interface implements Example2{
   interface Example{
 	
 	/**
-	 * Need to initialize static final variables 
+	 * Need to initialize variables 
 	 * at the time of declaration because in interface
-	 * we can't use blocks, constructor
+	 * we can't use blocks, constructor and also by default 
+	 * they will be static and final
 	 */
-	 
+	 static final byte VAL  = 10;
+	  
 	//Overloading
 	void method();
 	void method(int i);

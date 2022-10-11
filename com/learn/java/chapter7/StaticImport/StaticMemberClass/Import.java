@@ -11,8 +11,9 @@ public class Import {
 	{
 		methodImport();
 		
-		//it result in ambiguity error
-		//method1();
+		//If two static import have same static method result in ambiguity error
+		
+		
 		//static import can't import non static methods
 		//method2();
 	}

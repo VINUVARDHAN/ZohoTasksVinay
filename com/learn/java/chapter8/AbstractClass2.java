@@ -1,13 +1,11 @@
 package com.learn.java.chapter8;
 
-
-
-public class AbstractClass2 {
+class AbstractClass2 {
 	public static void main(String args[])
 	{
 		/**
-		 * you can call the static members of the abstract class without object reference 
-         * but you can't call the non static members .
+		 * In abstract class also you can call the static members 
+		 * without class reference variable
 		 */
 		ParentClass.method1();
 	    int b = ParentClass.a;
@@ -16,7 +14,7 @@ public class AbstractClass2 {
 
 abstract class ParentClass{
 	static int a = 10;
-	static void method1(){
+    static void method1(){
 	System.out.println("static method");
 	}
 }
