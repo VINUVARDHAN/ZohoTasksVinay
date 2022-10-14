@@ -17,10 +17,22 @@ public class TwoInterfaceHaveSameMethodName implements InterfaceA,InterfaceB{
 	{
 		System.out.println("method");
 	}
+	@Override
+	public void method1() {
+		// TODO Auto-generated method stub
+	}
 }
 interface InterfaceA{
 	void method();
+	default void method1()
+	{
+		System.out.println("method 1");
+	}
 }
 interface InterfaceB{
 	void method();
+	default void method1()
+	{
+		System.out.println("method 1");
+	}
 }

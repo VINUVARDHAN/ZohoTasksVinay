@@ -2,9 +2,12 @@ package com.learn.java.chapter9;
 
 /**
  * In the below example the implementation is done is parent class instead of child class
+ * But in case implementation is done in child class means the parent class 
+ * cannot access those implementations .
  */
 
 class ImplementAndExtend extends C1 implements IF1{
+
 	public static void main(String args[])
 	{
 		//implemented method 
@@ -15,17 +18,18 @@ class ImplementAndExtend extends C1 implements IF1{
 		c.m();
 	}
 
+	@Override
+	public void m() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
 
 class C1{
-	public void m()
-	{
-		System.out.println("Method in class C1");
-	}
+	
 }
 
 interface IF1{
 	void m();
 }
-
-

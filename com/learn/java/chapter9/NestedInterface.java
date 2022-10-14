@@ -6,6 +6,7 @@ package com.learn.java.chapter9;
  * Interface can be public private protected if nested
  */
 class OuterClass {
+	
 	 static interface StaticInnerInterface1{
 		
 	}
@@ -14,16 +15,19 @@ class OuterClass {
 	}
 }
 
+
+
 /**
  * Interface inside another interface .
  * interface by default will be public and abstract
  */
 interface OuterInterface{
+	void m();
 	 static interface StaticInnerInterface2{
 		
 	}
      interface InnerInterface2{
-		
+		void m1();
 	}
 }
 
