@@ -19,12 +19,13 @@ class ErrorInCallingMethodButHandledInCalledMethod {
 		// error will be pop up at calling line
 		m.method();
 
-		System.out.println("normal flow...");
+		System.out.println("Normal flow...");
 	}
 }
 /**
  * ****** NOTE ********
  * 
- * Consider there is no line 7,8,9 it won't show any error because of no
- * exception at that time.
+ * Consider there is no line 7,8,9 it won't show any error because we 
+ * through exception at main method 
+ * So,it will terminate at starting point only
  */

@@ -30,7 +30,7 @@ class Throw extends Throwable {
         // throw new Throw("Error message for user defined in exception");
     }
 }
-//We can't handle checked exception because they cause compile time error
+//We must handle checked exception because they cause compile time error
 //That can be handled by the throws keyword in method signature
 
 

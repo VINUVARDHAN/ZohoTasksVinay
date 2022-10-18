@@ -36,3 +36,4 @@ class StaticClass2{
 	}
 }
 
+//static block will executes only once the class is loaded
