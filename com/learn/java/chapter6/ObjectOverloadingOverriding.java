@@ -1,4 +1,4 @@
-package com.learn.java.Object;
+package com.learn.java.chapter6;
 
 public class ObjectOverloadingOverriding {
 	public static void main(String args[]) throws Throwable
