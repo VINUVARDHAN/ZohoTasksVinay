@@ -1,5 +1,4 @@
 package com.learn.java.Daily;
-import com.learn.java.chapter10.MultipleExceptionInASingleCatchBlock;
 public class Extensions {
     public static void main(String args[])
     {

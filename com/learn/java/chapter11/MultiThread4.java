@@ -4,12 +4,10 @@ public class MultiThread4 {
     public static void main(String[] args) {
         MultiThread5 m = new MultiThread5();
         MultiThread5 n = new MultiThread5();
-        m.start();
-        n.start();
     }
 }
 
-class MultiThread5 extends Thread {
+class MultiThread5 implements Runnable {
     static int i = 10;
     public void run() {
         i++;

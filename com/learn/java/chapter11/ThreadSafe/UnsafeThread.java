@@ -1,19 +1,23 @@
 package com.learn.java.chapter11.ThreadSafe;
 
-public class SafeUsingVolatile {
+public class UnsafeThread {
     public static void main(String[] args) throws InterruptedException {
-        Increment2 incri = new Increment2();
+        Increment incri = new Increment();
         Thread t1 = new Thread(new Runnable() {
-            public void run() {
-                for (int i = 0; i < 1000; i++) {
-                    incri.incri();
+            public void run()
+            {
+                for(int i=0;i<1000;i++)
+                {
+                    incri.incri(); 
                 }
             }
         });
         Thread t2 = new Thread(new Runnable() {
-            public void run() {
-                for (int i = 0; i < 1000; i++) {
-                    incri.incri();
+            public void run()
+            {
+                for(int i=0;i<1000;i++)
+                {
+                    incri.incri(); 
                 }
             }
         });
@@ -24,11 +28,10 @@ public class SafeUsingVolatile {
         System.out.println(incri.count);
     }
 }
-
-class Increment2 {
-    volatile int count;
-
-    public void incri() {
+class Increment{
+    int count = 0;
+    public void incri()
+    {
         count++;
     }
 }
