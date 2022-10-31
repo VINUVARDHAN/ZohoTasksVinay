@@ -1,8 +1,16 @@
 package com.learn.java.delete;
 
-public class delete4 extends Thread{
+class delete4{
     public static void main(String[] args) {
-        delete4 d = new delete4();
+        Test.m();
     }
-
+}
+class Test{
+    private Test() {
+        System.out.println("vdfjkbveur");
+    }
+    static void m()
+    {
+        System.out.println("dfjkbihef");
+    }
 }

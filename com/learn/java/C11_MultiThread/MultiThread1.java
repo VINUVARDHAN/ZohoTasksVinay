@@ -1,15 +1,15 @@
-package com.learn.java.chapter11;
+package com.learn.java.C11_MultiThread;
 
-public class MultiThread3 extends Thread {
+public class MultiThread1 extends Thread {
     private String s;
 
-    MultiThread3(String s) {
+    MultiThread1(String s) {
         this.s = s;
     }
 
     public static void main(String args[]) throws InterruptedException {
-        MultiThread3 c1 = new MultiThread3("one");
-        MultiThread3 c2 = new MultiThread3("two");
+        MultiThread1 c1 = new MultiThread1("one");
+        MultiThread1 c2 = new MultiThread1("two");
         // By using actual name of the method it will be executed after completion of
         // previous one
         // c1.run();
@@ -33,7 +33,7 @@ public class MultiThread3 extends Thread {
         // c2.start
     }
 
-     static void method(MultiThread3 m) {
+     static void method(MultiThread1 m) {
             m.start();
     }
 

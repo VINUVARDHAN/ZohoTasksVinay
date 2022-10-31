@@ -1,4 +1,4 @@
-package com.learn.java.chapter11;
+package com.learn.java.C11_MultiThread;
 //Synchronized method is used to lock an object for any shared resource.
 
 //When a thread invokes a synchronized method, it automatically acquires 

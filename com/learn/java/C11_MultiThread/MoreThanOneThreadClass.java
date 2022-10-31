@@ -1,15 +1,12 @@
-package com.learn.java.chapter11;
+package com.learn.java.C11_MultiThread;
 
 public class MoreThanOneThreadClass {
 public static void main(String[] args) throws InterruptedException {
     Thread1 t1 = new Thread1();
     Thread2 t2 = new Thread2();
     t1.start();
-    t1.suspend();
+    t1.join();
     t2.start();
-    t2.join();
-    System.out.println("nievnfr");
-    t1.resume();
 }
 }
 

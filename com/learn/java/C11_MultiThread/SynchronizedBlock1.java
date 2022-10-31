@@ -1,4 +1,4 @@
-package com.learn.java.chapter11;
+package com.learn.java.C11_MultiThread;
 
 public class SynchronizedBlock1 {
     public static void main(String[] args) {

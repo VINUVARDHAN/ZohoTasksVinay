@@ -5,7 +5,7 @@ import java.util.*;
 
 class ParentToChildIMP {
     public static void main(String[] args) {
-        C1 c = new C1();
+        final C1 c = new C1();
         try {
             c.m1();
         } catch (Throwable e) {

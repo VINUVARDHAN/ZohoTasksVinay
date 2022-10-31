@@ -1,4 +1,4 @@
-package com.learn.java.chapter11;
+package com.learn.java.C11_MultiThread;
 
 public class SuspendResume extends Thread{
     String val;

@@ -17,7 +17,7 @@ class Throw extends Throwable {
         if (10 > 9)
 
         {
-            throw new ArithmeticException("Error message for buil in exception");
+            throw new ArithmeticException("Error message for built in exception");
 
         }
         

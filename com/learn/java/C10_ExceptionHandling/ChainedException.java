@@ -1,28 +1,23 @@
 package com.learn.java.C10_ExceptionHandling;
-
-public class ChainedException {
+import java.io.IOException;
+import java.util.*;
+class ChainedException {
 public static void main(String args[])
 {
+   Scanner sc = new Scanner(System.in);
+   int a;
+   System.out.print("Enter the value of a : ");
+   a = sc.nextInt();
    try {
-       C c = new C();
-       c.method();
+       a = 10/a;
+       System.out.println(a);
    }
-   catch(ArithmeticException a)
-   {
-       System.out.println("exception is : "+ a);
-       //we are calling cause of the exception
-       System.out.println("Cause of this exception is : "+a.getCause());
+   catch(ArithmeticException e){
+       //Initiating the cause of the exception 
+       e.initCause(new IOException());
+       System.out.println(e);
+       //getting the cause of the exception 
+       System.out.println("Cause of the exception is : "+e.getCause());
    }
 }
-
 }
-//C is considered as an exception so it needs to be extended with other exceptions 
-class C extends NullPointerException{
-    void method()
-    {
-        ArithmeticException e = new ArithmeticException();
-        //We initialized the cause of arithmetic exception is Class C
-        e.initCause( new C());
-        throw e;
-    }
-} 
