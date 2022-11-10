@@ -9,5 +9,5 @@ class FinalStaticVariablesInterface implements A {
 	}
 }
 interface A{
-	 int VAL = 10;
+	 final int VAL = 10;
 }

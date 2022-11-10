@@ -5,15 +5,19 @@ class ThreadDemo {
 
     public static void main(String[] args) {
         ThreadDemo mt = new ThreadDemo();
-        Producer pd = new Producer( mt);
-        Consumer cd = new Consumer( mt);
-        
+        Producer pd = new Producer(mt);
+        Consumer cd = new Consumer(mt);
+
     }
+
     static boolean check = false;
+
     synchronized void getValue() {
-        while(check)
-        {
-            try {wait();} catch (InterruptedException e) {  }
+        while (check) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+            }
         }
         System.out.println("consumer : " + value);
         check = true;
@@ -21,9 +25,11 @@ class ThreadDemo {
     }
 
     synchronized void setValue(int value) {
-        while(!check)
-        {
-            try {wait();} catch (InterruptedException e) {  }
+        while (!check) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+            }
         }
         this.value = value;
         System.out.println("producer : " + this.value);
@@ -45,7 +51,10 @@ class Producer extends Thread {
         int i = 1;
         while (true) {
             mt.setValue(i++);
-            try {Thread.sleep(1000);} catch (InterruptedException e) {}
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
         }
     }
 }
@@ -60,11 +69,14 @@ class Consumer extends Thread {
     }
 
     public void run() {
-        int i =1;
+        int i = 1;
         while (true) {
             i++;
-        mt.getValue();
-        try {Thread.sleep(1000);} catch (InterruptedException e) {}
+            mt.getValue();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
         }
     }
 }
