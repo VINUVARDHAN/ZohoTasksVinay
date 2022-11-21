@@ -7,6 +7,8 @@ public static void main(String[] args) {
     Sample1<Integer> type2 = new Sample1<Integer>(213);
     System.out.println("I am string "+":"+ type1.value);
     System.out.println("I am Integer "+":"+ type2.value);
+    Integer i = 10;
+    System.out.println(i.getClass());
 }
 }
 class Sample1<TT>{
@@ -14,5 +16,6 @@ class Sample1<TT>{
     Sample1(TT val)
     {
         this.value = val;
+        
     }
 }

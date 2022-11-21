@@ -17,6 +17,12 @@ public class ArrayList1 {
         a.add(null);
         a.add(null);
         System.out.println(a);
+        
+        //swapping  A by Z
+        Collections.swap(a, 0, 3);
+
+        System.out.println(a);
+        
         ArrayList<String> b = a;
         b.set(0, "D");
         System.out.println("After modify");
@@ -45,6 +51,10 @@ public class ArrayList1 {
         list2D.add(new ArrayList<Integer>());
         // list2D.get(0).add(1);
         list2D.add(new ArrayList<Integer>(Arrays.asList(3, 4, 6)));
+        
         System.out.println(list2D);
+        
+        
+        
     }
 }

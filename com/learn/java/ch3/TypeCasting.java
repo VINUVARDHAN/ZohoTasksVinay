@@ -28,9 +28,10 @@ public class TypeCasting {
 		//int to char
 		char f = 98;
 		//int to boolean
+		
 		//boolean g = (bool)10;
 		//boolean to int
-		//a = g;
+
 		//char to string
 		String h = String.valueOf(f);
 		//string to char
