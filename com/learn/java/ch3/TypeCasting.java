@@ -3,6 +3,8 @@ package com.learn.java.ch3;
 public class TypeCasting {
 	public static void main(String args[])
 	{
+	    byte v = 10;
+	    int z = v;
 		//byte to integer
 		int a = 10;
 		//integer to byte

@@ -10,11 +10,14 @@ public class ExecutorServiceDemo {
         ChildClassofThread[] child1 = { new ChildClassofThread("vinay"),
                 new ChildClassofThread("manja"),
                 new ChildClassofThread("kumar"),
-                new ChildClassofThread("kavit")};
-        for (int i = 0; i < 4; i++) {
+                new ChildClassofThread("kavit"),
+                new ChildClassofThread("powde"),
+                new ChildClassofThread("pajam"),
+        };
+        for (int i = 0; i < 6; i++) {
             service.submit(child1[i]);
         }
-
+        service.shutdown();
     }
 }
 
@@ -27,5 +30,11 @@ class ChildClassofThread extends Thread {
 
     public void run() {
         System.out.println("name is : " + this.name + "  and thread name is : " + Thread.currentThread().getName());
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }
