@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+body {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 3%;
+}
+
+.common_div {
+	border-radius: 20%;
+	background-color: darkslategrey;
+	position: fixed;
+	color: #0dfbc9;
+	height: 550px;
+	width: 30%;
+	padding: auto;
+	right: 5%;
+	border-radius: 10%;
+}
+
+.content_display {
+	width: 100%;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.table_head {
+	height: 30px;
+	border: 1px solid black;
+	background-color: darkslategrey;
+	color: white;
+}
+
+.content_hover td {
+	height: 30px;
+	border: 1px solid black;
+}
+
+.forms {
+	margin-top: 20%;
+	margin-left: 15%;
+}
+
+.form_table td {
+	height: 35px
+}
+
+.edit_delete {
+	background: none;
+	border: none;
+	COLOR: white;
+	font-size: 24px;
+}
+.content_hover:hover{
+	color: blue;
+}
+.content_hover:hover .edit_delete{
+	color: blue;
+}
+
+.content_hover:hover .edit_delete:hover{
+	color: red;
+	border: none;
+	background: none;
+	box-shadow: none;
+}
+
+.search_content {
+	width: 60px;
+	height: 30px;
+	border: 1px solid black;
+}
+
+.lead_name_column {
+	background: none;
+	border: none;
+}
+
+.lead_name_column:hover {
+	color: green;
+	text-decoration: underline;
+}
+
+textarea:focus, input:focus {
+	outline: none;
+	border: 2px solid black;
+	-webkit-transition: 0.5s;
+	background-color: #b6fab5
+}
+
+.resent {
+	background-color: #e9ff9a
+}
+
+td th {
+	width: 50px;
+}
+
+.close_button {
+	position: relative;
+	float: right;
+	background: black;
+	color: white;
+	top: 20px;
+	right: 20px;
+	width: 40px;
+	height: 40px;
+	border-color: black;
+	border-radius: 50%
+}
+
+/* FOR ALL BUTTONS*/
+button:hover {
+	border: 2px solid black;
+	box-shadow: 3px 3px;
+}
+
+button {
+	color: black;
+	background-color: #77c3bc;
+	border: 2px solid black;
+}
+
+
+.efvaefr {
+	color: #73a881;
+}
