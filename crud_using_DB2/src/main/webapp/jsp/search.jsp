@@ -22,17 +22,6 @@
 
 </head>
 <body>
-	<div class="Menu">
-		<table>
-			<tr>
-				<td><button type="button" onclick="searchRequest()">SEARCH</button></td>
-				<td><input type="text" id="search_value" name="search_value"
-					placeholder="-----" required></td>
-				<td><button style="margin-right: 0" type="button"
-						onclick="openCreate()">CREATE</button></td>
-			</tr>
-		</table>
-	</div>
 	<div id="search_div_id">
 		<%
 		DB f = new DB();

@@ -1,25 +1,22 @@
 
 //request for set of records
 var request;
-function loadData(start, action) {
-	var url = "/crud_using_DB2/jsp/getdata.jsp?action=" + action + "&start=" + start;
+function loadData(start, action, range) {
+	var url = "/crud_using_DB2/jsp/getData.jsp?action=" + action + "&start=" + start + "&range=" + range;
 	request = new XMLHttpRequest();
 	try {
-		request.onreadystatechange = setOfRecords;
+		request.onreadystatechange = function() {
+			if (request.readyState == 4) {
+				var val = request.responseText;
+				document.getElementById('data_next_before').innerHTML = val;
+			}
+		};
 		request.open("GET", url, true);
 		request.send();
 	} catch (e) {
 		alert("Unable to connect to server");
 	}
 }
-
-function setOfRecords() {
-	if (request.readyState == 4) {
-		var val = request.responseText;
-		document.getElementById('data_next_before').innerHTML = val;
-	}
-}
-
 
 //request for create page
 function openCreate() {
@@ -28,18 +25,16 @@ function openCreate() {
 	request = new XMLHttpRequest();
 
 	try {
-		request.onreadystatechange = createPage;
+		request.onreadystatechange = function() {
+			if (request.readyState == 4) {
+				var val = request.responseText;
+				document.getElementById('common_place').innerHTML = val;
+			}
+		};
 		request.open("POST", url, true);
 		request.send();
 	} catch (e) {
 		alert("Unable to connect to server");
-	}
-}
-
-function createPage() {
-	if (request.readyState == 4) {
-		var val = request.responseText;
-		document.getElementById('common_place').innerHTML = val;
 	}
 }
 
@@ -50,18 +45,16 @@ function searchRequest() {
 	request = new XMLHttpRequest();
 
 	try {
-		request.onreadystatechange = searchInfo;
+		request.onreadystatechange = function() {
+			if (request.readyState == 4) {
+				var val = request.responseText;
+				document.getElementById('search_results').innerHTML = val;
+			}
+		};
 		request.open("GET", url, true);
 		request.send();
 	} catch (e) {
 		alert("Unable to connect to server");
-	}
-}
-
-function searchInfo() {
-	if (request.readyState == 4) {
-		var val = request.responseText;
-		document.getElementById('search_results').innerHTML = val;
 	}
 }
 
@@ -79,18 +72,16 @@ function openUpdatePage(rollno) {
 	request = new XMLHttpRequest();
 
 	try {
-		request.onreadystatechange = updatePageInfo;
+		request.onreadystatechange = function() {
+			if (request.readyState == 4) {
+				var val = request.responseText;
+				document.getElementById('common_place').innerHTML = val;
+			}
+		};
 		request.open("GET", url, true);
 		request.send();
 	} catch (e) {
 		alert("Unable to connect to server");
-	}
-}
-
-function updatePageInfo() {
-	if (request.readyState == 4) {
-		var val = request.responseText;
-		document.getElementById('common_place').innerHTML = val;
 	}
 }
 
@@ -113,4 +104,10 @@ function updateLeadByName(name) {
 	if (confirm('Are you sure you want to update ' + oldname + ' ?')) {
 		window.location = "http://localhost:8080/crud_using_DB2/update?old_name=" + oldname + "&lead_name_update=" + newname + "&company_update=" + company + "&source_update=" + source + "&phone_no_update=" + phoneno + "&email_update=" + email;;
 	}
+}
+
+//page range
+function setPageRange() {
+	range = document.getElementById("range_selection").value;
+	loadData(0, 'next', range);
 }
