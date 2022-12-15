@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="4.0">
 	<display-name>crud_using_DB2</display-name>
 	<welcome-file-list>
-		<welcome-file>jsp/home.jsp</welcome-file>
+		<welcome-file>jsp/loginPage.jsp</welcome-file>
 	</welcome-file-list>
 
 	<servlet>
@@ -43,4 +43,23 @@
 		<servlet-name>search</servlet-name>
 		<url-pattern>/search</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddUserRecord</servlet-name>
+		<servlet-class>com.app.AddUserRecord</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddUserRecord</servlet-name>
+		<url-pattern>/AddUserRecord</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>home</servlet-name>
+		<jsp-file>/jsp/home.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>home</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

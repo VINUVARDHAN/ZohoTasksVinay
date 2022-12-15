@@ -21,7 +21,6 @@ function loadData(start, action, range) {
 //request for create page
 function openCreate() {
 	document.getElementById("common_place").style.width = "500px";
-	console.log("hi");
 	var url = "/crud_using_DB2/jsp/create.jsp";
 	request = new XMLHttpRequest();
 
@@ -44,22 +43,24 @@ function searchRequest() {
 	prefixPattern = document.getElementById("search_value").value;
 	if (prefixPattern != '') {
 		document.getElementById("search_results").style.height = "200px";
+		var url = "/crud_using_DB2/jsp/search.jsp?pattern=" + prefixPattern;
+		request = new XMLHttpRequest();
 
+		try {
+			request.onreadystatechange = function() {
+				if (request.readyState == 4) {
+					var val = request.responseText;
+					document.getElementById('search_results').innerHTML = val;
+				}
+			};
+			request.open("GET", url, true);
+			request.send();
+		} catch (e) {
+			alert("Unable to connect to server");
+		}
 	}
-	var url = "/crud_using_DB2/jsp/search.jsp?pattern=" + prefixPattern;
-	request = new XMLHttpRequest();
-
-	try {
-		request.onreadystatechange = function() {
-			if (request.readyState == 4) {
-				var val = request.responseText;
-				document.getElementById('search_results').innerHTML = val;
-			}
-		};
-		request.open("GET", url, true);
-		request.send();
-	} catch (e) {
-		alert("Unable to connect to server");
+	else {
+		document.getElementById("search_results").style.height = "0px";
 	}
 }
 
@@ -93,7 +94,7 @@ function openUpdatePage(rollno) {
 //delete
 function deleteLeadByName(name) {
 	if (confirm('Are you sure you want to delete ' + name + ' ?')) {
-		window.location = "http://localhost:8080/crud_using_DB2/delete?name=" + name;
+		window.location = "/crud_using_DB2/delete?name=" + name;
 	}
 }
 
@@ -107,12 +108,28 @@ function updateLeadByName(name) {
 	email = document.getElementById('email_update').value;
 
 	if (confirm('Are you sure you want to update ' + oldname + ' ?')) {
-		window.location = "http://localhost:8080/crud_using_DB2/update?old_name=" + oldname + "&lead_name_update=" + newname + "&company_update=" + company + "&source_update=" + source + "&phone_no_update=" + phoneno + "&email_update=" + email;;
+		window.location = "/crud_using_DB2/update?old_name=" + oldname + "&lead_name_update=" + newname + "&company_update=" + company + "&source_update=" + source + "&phone_no_update=" + phoneno + "&email_update=" + email;;
 	}
 }
 
-//page range
+//record range selection
 function setPageRange() {
 	range = document.getElementById("range_selection").value;
 	loadData(0, 'next', range);
 }
+
+
+//Login page
+function login() {
+	username = document.getElementById("uname").value;
+	password = document.getElementById("psw").value;
+	if (username != '' && password != '') {
+		var url = "/crud_using_DB2/home?username=" + username + "&psw=" + password;
+		window.location.href = url;
+	}
+	else {
+		alert("Fields are empty");
+	}
+}
+
+

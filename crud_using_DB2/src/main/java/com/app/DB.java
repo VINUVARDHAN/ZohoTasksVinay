@@ -124,9 +124,39 @@ public class DB {
 	}
 
 	public int getSizeOfDb() {
-		DB db = new DB();
-		LinkedList<DbStructure> totalData = db.getDataSet();
+		DB dB = new DB();
+		LinkedList<DbStructure> totalData = dB.getDataSet();
 		return totalData.size();
 	}
 	
+	public boolean checkForUserInDB(String sql){
+		StatementConnection sc = connection();
+		try {
+			ResultSet rs = sc.st.executeQuery(sql);
+			if (rs.next())
+			{
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		catch(Exception e){
+			System.out.println(e+" i am in checkForUserInDB in DB class");
+			return false;
+		}
+	}
+	
+	public boolean checkByQuery(String sql)
+	{
+		StatementConnection sc = connection();
+		try {
+			sc.st.executeUpdate(sql);
+			sc.con.close();
+			return true;
+		} catch (Exception e) {
+			System.out.println(e + " error in update");
+			return false;
+		}
+	}
 }

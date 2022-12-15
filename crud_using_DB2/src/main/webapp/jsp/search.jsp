@@ -25,8 +25,8 @@
 	<div id="search_div_id">
 		<%
 		DB f = new DB();
-		LinkedList<DbStructure> list = f.search(request.getParameter("pattern"));
-		if (!request.getParameter("pattern").equals("") && list.size() > 0) {
+				LinkedList<DbStructure> list = f.search(request.getParameter("pattern"));
+				if (!request.getParameter("pattern").equals("") && list.size() > 0) {
 		%>
 
 		<table class="content_display">

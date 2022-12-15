@@ -12,11 +12,6 @@
 <link rel="stylesheet" href="/crud_using_DB2/css/home.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="/crud_using_DB2/js/home.js">
@@ -30,11 +25,26 @@ body {
 }
 </style>
 </head>
+<!-- <% %> <%  %> -->
 <body>
 	<h2
-		style="text-align: center; font-family: cursor; background-color: rgb(176, 227, 200)">CRUD
+		style="text-align: center; font-family: cursor; animation: 4s infinite main_tag_bg_color;">CRUD
 		Using DataBase</h2>
-
+	<%
+	String username = (String) request.getParameter("username");
+	String password = (String) request.getParameter("psw");
+	if (username == null && password == null) {
+		username = (String) session.getAttribute("username");
+		password = (String) session.getAttribute("psw");
+	} else {
+		session.setAttribute("username", username);
+		session.setAttribute("psw", password);
+	}
+	String sql = "select * from SignUpRecords where username = '" + username + "' AND " + " password= '" + password + "'";
+	DB db = new DB();
+	boolean checkUserInDB = db.checkForUserInDB(sql);
+	if (checkUserInDB) {
+	%>
 	<div>
 		<div class="Menu">
 			<table>
@@ -67,8 +77,23 @@ body {
 			);
 		</script>
 	</div>
-
-	<div></div>
-
+	<%
+	} else {
+	%>
+	<div
+		style="color: red; text-align: center; width: 100%; margin-top: 50px; animation: 2s infinite bgcolorchange;">
+		<h5>User Not Found</h5>
+		<a style="text-decoration: none"
+			href="/crud_using_DB2/jsp/loginPage.jsp"><button>try
+				again</button></a>
+	</div>
+	<%
+	try {
+		session.removeAttribute("username");
+		session.removeAttribute("psw");
+	} catch (Exception e) {
+		System.out.print("no attributes");
+	}
+	} %>
 </body>
 </html>

@@ -19,23 +19,22 @@ public class Create extends HttpServlet {
 		String source = (String) req.getParameter("source");
 		long phoneNo = Long.parseLong(req.getParameter("phone_no"));
 		String email = (String) req.getParameter("email");
-
-		DB db = new DB();
+		HttpSession session = req.getSession();
+		DB dB = new DB();
 		try {
-			if (db.create(name, company, source, phoneNo, email)) {
-				HttpSession session = req.getSession();
+			if (dB.create(name, company, source, phoneNo, email)) {
 				session.setAttribute("findCreatedName", name);
-				res.sendRedirect("jsp/home.jsp");
+				res.sendRedirect("home");
 			} else {
 				pw.println("<script type=\"text/javascript\">");
 				pw.println("alert('Lead with this name is already present ,Try Again With different Name');");
-				pw.println("location='jsp/home.jsp';");
+				pw.println("location='home';");
 				pw.println("</script>");
 			}
 		} catch (ClassNotFoundException | SQLException | IOException e) {
 			pw.println("<script type=\"text/javascript\">");
 			pw.println("alert('Problem when connecting with DataBase');");
-			pw.println("location='jsp/home.jsp';");
+			pw.println("location='home';");
 			pw.println("</script>");
 		}
 	}

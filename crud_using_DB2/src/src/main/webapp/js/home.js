@@ -44,8 +44,6 @@ function searchRequest() {
 	prefixPattern = document.getElementById("search_value").value;
 	if (prefixPattern != '') {
 		document.getElementById("search_results").style.height = "200px";
-
-	}
 	var url = "/crud_using_DB2/jsp/search.jsp?pattern=" + prefixPattern;
 	request = new XMLHttpRequest();
 
@@ -60,6 +58,11 @@ function searchRequest() {
 		request.send();
 	} catch (e) {
 		alert("Unable to connect to server");
+	}
+	}
+	else
+	{
+		document.getElementById("search_results").style.height = "0px";
 	}
 }
 

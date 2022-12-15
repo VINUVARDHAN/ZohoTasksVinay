@@ -16,10 +16,10 @@ public class Search extends HttpServlet {
 		res.setContentType("text/html");
 		PrintWriter pw = res.getWriter();
 		String pattern = (String) req.getParameter("search_value");
-		DB db = new DB();
-		LinkedList<DbStructure> rs = db.search(pattern);
+		DB dB = new DB();
+		LinkedList<DbStructure> rs = dB.search(pattern);
 		HttpSession session = req.getSession();
 		session.setAttribute("rs", rs);
-		res.sendRedirect("jsp/home.jsp");
+		res.sendRedirect("home");
 	}
 }

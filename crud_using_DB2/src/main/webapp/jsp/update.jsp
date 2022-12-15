@@ -28,7 +28,7 @@ body {
 		onclick="document.getElementById('common_place').style.width = '0';">X</button>
 	<div class="common_div">
 		<form class="forms" method="post">
-			<h2 style="color: #dfd1f3; font-family: cursor">UPADTE LEAD</h2>
+			<h2 style="color: #dfd1f3; font-family: cursor">EDIT  LEAD</h2>
 			<table class="form_table">
 				<tr>
 					<td>Name</td>

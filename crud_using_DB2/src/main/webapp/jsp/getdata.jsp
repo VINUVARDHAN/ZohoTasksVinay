@@ -22,18 +22,18 @@
 <body>
 	<%
 	int start = Integer.parseInt(request.getParameter("start"));
-	int range = Integer.parseInt(request.getParameter("range"));
-	session.setAttribute("range", range);
-	int end = start + range;
-	DB db = new DB();
-	String sql = null;
-	if (request.getParameter("action").equals("next")) {
+			int range = Integer.parseInt(request.getParameter("range"));
+			session.setAttribute("range", range);
+			int end = start + range;
+			DB db = new DB();
+			String sql = null;
+			if (request.getParameter("action").equals("next")) {
 		sql = "SELECT * FROM LeadTable limit " + start + "," + range;
-	} else {
+			} else {
 		sql = "SELECT * FROM LeadTable limit " + start + "," + range;
-	}
-	LinkedList<DbStructure> data = db.getResultByQuery(sql);
-	int size = data.size();
+			}
+			LinkedList<DbStructure> data = db.getResultByQuery(sql);
+			int size = data.size();
 	%>
 	<table class="content_display">
 		<tr>
@@ -42,30 +42,33 @@
 			<td></td>
 			<td></td>
 			<td><form action="myservlet.do" method="POST">
-					<select name="myselect" id="range_selection" onchange="setPageRange();">
-					<option value="<%=range%>" selected><%=range%></option>
+					<select name="myselect" id="range_selection"
+						onchange="setPageRange();">
+						<option value="<%=range%>" selected><%=range%></option>
 						<option value="3">3</option>
 						<option value="5">5</option>
 						<option value="10">10</option>
 						<option value="20">20</option>
-					</select> rows per page
+					</select> Leads per page
 				</form></td>
-			<td>
+			<td style="float: right">
 				<%
 				if (start >= range) {
-				%><button type="button"
-					onclick="loadData(<%=start - range%>,'next',<%=range%>)">prev</button> <%
- } else {
- %><button title="no leads">prev</button> <%
+				%><button style="width: 40px" type="button"
+					onclick="loadData(<%=start - range%>,'next',<%=range%>)"><</button>
+				<%
+				} else {
+				%><button style="width: 40px" title="no leads"><</button> <%
  }
- %> <input style="width: 60px" type="button"
-				value="<%=start + 1%> - <%=size+start%>"> <%
- if (end < db.getSizeOfDb()) {
- %><button type="button" onclick="loadData(<%=end%>,'prev',<%=range%>)">next</button>
+ %> <%=start + 1%> - <%=size + start%>
+				<%
+				if (end < db.getSizeOfDb()) {
+				%>
+				<button style="width: 40px" type="button" onclick="loadData(<%=end%>,'prev',<%=range%>)">></button>
 				<%
 				} else {
 				%>
-				<button title="no leads">next</button> <%}%>
+				<button style="width: 40px" title="no leads">></button> <%}%>
 			</td>
 		</tr>
 		<tr>
@@ -78,17 +81,19 @@
 		</tr>
 		<%
 		for (int j = 0; j < size; j++) {
-			
-			if(data.get(j).getName().equals(session.getAttribute("findUpdatedName")))
-			{
-				%><tr class="recent_update_data"><%
-			}
-			else{
-				%><tr class="data_table"><%
-			}
-		%>
+
+			if (data.get(j).getName().equals(session.getAttribute("findUpdatedName"))) {
+		%><tr class="recent_update_data">
+			<%
+			} else {
+			%>
 		
-			<td style="border-style: hidden !important;background-color: white">
+		<tr class="data_table">
+			<%
+			}
+			%>
+
+			<td style="border-style: hidden !important; background-color: white">
 				<button class="edit_delete" type="button"
 					onclick="openUpdatePage('<%=j%>')">
 					<i class="fa">&#xf044;</i>
@@ -99,7 +104,7 @@
 			<td id="<%=j%>c"><%=data.get(j).getSource()%></td>
 			<td id="<%=j%>d"><%=data.get(j).getPhoneno()%></td>
 			<td id="<%=j%>e"><%=data.get(j).getEmail()%></td>
-			<td style="border-style: hidden !important;background-color: white">
+			<td style="border-style: hidden !important; background-color: white">
 				<button class="edit_delete" type="button"
 					onclick="deleteLeadByName('<%=data.get(j).getName()%>')">
 					<i class="fa">&#xf014;</i>

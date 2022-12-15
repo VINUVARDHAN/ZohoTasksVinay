@@ -27,27 +27,27 @@ public class Update extends HttpServlet {
 		}
 		HttpSession session = req.getSession();
 		String email = (String) req.getParameter("email_update");
-		DB db = new DB();
+		DB dB = new DB();
 		if (newName.equals("") || company.equals("")) {
 			session.setAttribute("findUpdatedName", "");
 			pw.println("<script type=\"text/javascript\">");
 			pw.println("alert('Name and Company cannot be empty');");
-			pw.println("location='jsp/home.jsp';");
+			pw.println("location='home';");
 			pw.println("</script>");
-		} else if (check && db.update(oldName, newName, company, source, phoneNo, email)) {
+		} else if (check && dB.update(oldName, newName, company, source, phoneNo, email)) {
 			session.setAttribute("findUpdatedName", newName);
-			res.sendRedirect("jsp/home.jsp");
+			res.sendRedirect("home");
 		} else if (!check) {
 			session.setAttribute("findUpdatedName", "");
 			pw.println("<script type=\"text/javascript\">");
 			pw.println("alert('phone number is wrong');");
-			pw.println("location='jsp/home.jsp';");
+			pw.println("location='home';");
 			pw.println("</script>");
 		} else {
 			session.setAttribute("findUpdatedName", "");
 			pw.println("<script type=\"text/javascript\">");
 			pw.println("alert('Name given is already in Lead try, with different name');");
-			pw.println("location='jsp/home.jsp';");
+			pw.println("location='home';");
 			pw.println("</script>");
 		}
 	}
