@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+@keyframes main_tag_bg_color { 
+	0% {
+	background-color: #b0e3c8;
+}
+50% {
+	background-color: #aafafb;
+}
+100% {
+	background-color: #b0e3c8;
+}
+}
+
+
+body {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 3%;
+}
+
+#common_place {
+	display: block;
+	height: 500px;
+	width: 0;
+	position: fixed;
+	top: 100px;
+	right: 5%;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	color: white;
+	opacity: 85%;
+	border-radius: 5%
+}
+
+#search_results {
+	display: block;
+	height: 0;
+	width: 60%;
+	position: flex;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	color: white;
+	opacity: 95%;
+	display: block;
+}
+
+.content_display {
+	width: 100%;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.table_head {
+	height: 30px;
+	border: 1px solid black;
+	background-color: darkslategrey;
+	color: white;
+}
+
+.data_table td {
+	height: 30px;
+	border: 1px solid black;
+}
+
+.data_table:hover {
+	color: blue;
+}
+
+.data_table:hover .edit_delete {
+	color: blue;
+}
+
+.data_table:hover .edit_delete:hover {
+	color: red;
+	border: none;
+	background: none;
+	box-shadow: none;
+}
+
+.recent_update_data {
+	animation: 4s infinite bgcolorchange;
+}
+
+@keyframes bgcolorchange { 25% {
+	background-color: rgb(218, 236, 204);
+}
+
+}
+.recent_update_data td {
+	height: 30px;
+	border: 1px solid black;
+}
+
+.recent_update_data:hover {
+	color: blue;
+}
+
+.recent_update_data:hover .edit_delete {
+	color: blue;
+}
+
+.recent_update_data:hover .edit_delete:hover {
+	color: red;
+	border: none;
+	background: none;
+	box-shadow: none;
+}
+
+.forms {
+	margin-top: 20%;
+	margin-left: 10%;
+}
+
+.form_table td {
+	height: 35px
+}
+
+.edit_delete {
+	background: none;
+	border: none;
+	COLOR: white;
+	font-size: 24px;
+}
+
+.search_content {
+	width: 60px;
+	height: 30px;
+	border: 1px solid white;
+}
+
+.lead_name_column {
+	background: none;
+	border: none;
+}
+
+.lead_name_column:hover {
+	color: green;
+	text-decoration: underline;
+}
+
+textarea:focus, input:focus {
+	outline: none;
+	border: 2px solid black;
+	-webkit-transition: 0.5s;
+	background-color: #b6fab5
+}
+
+td th {
+	width: 50px;
+}
+
+.close_button {
+	position: relative;
+	float: right;
+	background: black;
+	color: white;
+	top: 20px;
+	right: 20px;
+	width: 40px;
+	height: 40px;
+	border-color: white;
+	border-radius: 50%;
+}
+
+.close_button:hover {
+	background-color: red;
+	box-shadow: 0px 0px;
+}
+
+/* FOR ALL BUTTONS*/
+button:hover {
+	border: 2px solid black;
+	box-shadow: 3px 3px #6d6d6d;
+}
+
+button {
+	color: black;
+	background-color: #77c3bc;
+	border: 2px solid black;
+}
+
+.efvaefr {
+	color: #aafafb;
+}
+

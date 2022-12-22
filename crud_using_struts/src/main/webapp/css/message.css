@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+#loginError {
+	visibility: hidden;
+	margin-left: -125px;
+	background-color: white;
+	top: 2%;
+	border:3px solid black;
+	color: red;
+	text-align: center;
+	border-radius: 2px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	font-size: 17px;
+	transition: 0.5s;
+}
+
+#loginError.show {
+	visibility: visible;
+	animation: shake 0.5s; 
+	animation-iteration-count: infinite; 
+}
+#signupError {
+	visibility: hidden;
+	margin-left: -200px;
+	background-color: white;
+	top: 2%;
+	border:3px solid black;
+	color: red;
+	text-align: center;
+	border-radius: 2px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	font-size: 17px;
+	transition: 0.5s;
+}
+
+#signupError.show {
+	visibility: visible;
+	animation: shake 0.5s; 
+	animation-iteration-count: infinite; 
+}
+#duplicateError {
+	visibility: hidden;
+	margin-left: -200px;
+	background-color: white;
+	top: 2%;
+	border:3px solid black;
+	color: red;
+	text-align: center;
+	border-radius: 2px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	font-size: 17px;
+	transition: 0.5s;
+}
+
+#duplicateError.show {
+	visibility: visible;
+	animation: shake 0.5s; 
+	animation-iteration-count: infinite; 
+}
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+#insertedMessage {
+	visibility: hidden;
+	margin-left: -125px;
+	background-color: white;
+	top: 2%;
+	border:3px solid black;
+	color: green;
+	text-align: center;
+	border-radius: 2px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	font-size: 17px;
+	transition: 0.5s;
+}
+
+#insertedMessage.show {
+	visibility: visible;
+	-webkit-animation: slidein 0.5s, slideout 0.5s 2.5s;
+	animation: slidein 0.5s, slideout 0.5s 2.5s;
+}
+#updatedMessage {
+	visibility: hidden;
+	margin-left: -125px;
+	background-color: white;
+	top: 2%;
+	border:3px solid black;
+	color: green;
+	text-align: center;
+	border-radius: 2px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	font-size: 17px;
+	transition: 0.5s;
+}
+
+#updatedMessage.show {
+	visibility: visible;
+	-webkit-animation: slidein 0.5s, slideout 0.5s 2.5s;
+	animation: slidein 0.5s, slideout 0.5s 2.5s;
+}
+@-webkit-keyframes fadein {
+	from {bottom: 0;
+	opacity: 0;
+}
+
+to {
+	bottom: 30px;
+	opacity: 1;
+}
+
+}@keyframes fadein {
+	from {bottom: 0;
+	opacity: 0;
+}
+
+to {
+	bottom: 30px;
+	opacity: 1;
+}
+
+}@-webkit-keyframes fadeout {
+	from {bottom: 30px;
+	opacity: 1;
+}
+
+to {
+	bottom: 0;
+	opacity: 0;
+}
+
+}@keyframes fadeout {
+	from {bottom: 30px;
+	opacity: 1;
+}
+
+to {
+	bottom: 0;
+	opacity: 0;
+}
+}

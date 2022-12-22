@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.custom.i18n.resources"
+		value="WelcomeAction" />
+	<package name="default" extends="struts-default, json-default"
+		namespace="/">
+		<action name="loginDetails" class="com.app.SignIn"
+			method="login">
+			<result name="success">jsp/home.jsp</result>
+			<result name="input">jsp/Login.jsp</result>
+			<result name="error">jsp/Login.jsp</result>
+		</action>
+		<action name="signupDetails" class="com.app.SignIn"
+			method="signup">
+			<result name="success">jsp/home.jsp</result>
+			<result name="input">jsp/Login.jsp</result>
+			<result name="error">jsp/Login.jsp</result>
+		</action>
+		<action name="insertRecord" class="com.app.Lead"
+			method="addLead">
+			<result name="success">jsp/getData.jsp</result>
+			<result name="input">jsp/home.jsp</result>
+		</action>
+		<action name="deleteRecord" class="com.app.Lead"
+			method="deleteLead">
+			<result name="success">jsp/getData.jsp</result>
+			<result name="input">jsp/home.jsp</result>
+		</action>
+		<action name="updateRecord" class="com.app.Lead"
+			method="updateLead">
+			<result name="success">jsp/getData.jsp</result>
+			<result name="input">jsp/home.jsp</result>
+		</action>
+		<action name="range" class="com.app.Lead" method="execute">
+			<result name="success">jsp/getData.jsp</result>
+			<result name="input">js/home.js</result>
+		</action>
+	</package>
+</struts>
