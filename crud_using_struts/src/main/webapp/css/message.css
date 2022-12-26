@@ -1,20 +1,21 @@
 @charset "UTF-8";
 
 #loginError {
-	visibility: hidden;
-	margin-left: -125px;
-	background-color: white;
+	width:24%;
+	margin-left:33%;
+	margin-right:33%;
+	text-align:center;
+	background-color: #ffc9c6;
 	top: 2%;
-	border:3px solid black;
+	border:3px solid red;
 	color: red;
-	text-align: center;
 	border-radius: 2px;
+	visibility:hidden;
 	padding: 16px;
 	position: fixed;
-	z-index: 1;
-	left: 50%;
 	font-size: 17px;
 	transition: 0.5s;
+	
 }
 
 #loginError.show {
@@ -23,45 +24,24 @@
 	animation-iteration-count: infinite; 
 }
 #signupError {
-	visibility: hidden;
-	margin-left: -200px;
-	background-color: white;
+	width:26%;
+	margin-left:32%;
+	margin-right:32%;
+	text-align:center;
+	background-color: #ffc9c6;
 	top: 2%;
-	border:3px solid black;
+	border:3px solid red;
 	color: red;
-	text-align: center;
 	border-radius: 2px;
+	visibility:hidden;
 	padding: 16px;
 	position: fixed;
-	z-index: 1;
-	left: 50%;
 	font-size: 17px;
 	transition: 0.5s;
+	
 }
 
 #signupError.show {
-	visibility: visible;
-	animation: shake 0.5s; 
-	animation-iteration-count: infinite; 
-}
-#duplicateError {
-	visibility: hidden;
-	margin-left: -200px;
-	background-color: white;
-	top: 2%;
-	border:3px solid black;
-	color: red;
-	text-align: center;
-	border-radius: 2px;
-	padding: 16px;
-	position: fixed;
-	z-index: 1;
-	left: 50%;
-	font-size: 17px;
-	transition: 0.5s;
-}
-
-#duplicateError.show {
 	visibility: visible;
 	animation: shake 0.5s; 
 	animation-iteration-count: infinite; 
@@ -73,49 +53,50 @@
   75% { transform: rotate(-5deg); }
   100% { transform: rotate(0deg); }
 }
-#insertedMessage {
-	visibility: hidden;
-	margin-left: -125px;
-	background-color: white;
+#successM {
+	width:24%;
+	margin-left:33%;
+	margin-right:33%;
+	text-align:center;
+	background-color: #cbffbe;
 	top: 2%;
-	border:3px solid black;
+	border:3px solid green;
 	color: green;
-	text-align: center;
 	border-radius: 2px;
+	visibility:hidden;
 	padding: 16px;
 	position: fixed;
-	z-index: 1;
-	left: 50%;
 	font-size: 17px;
 	transition: 0.5s;
 }
 
-#insertedMessage.show {
+#successM.show {
 	visibility: visible;
 	-webkit-animation: slidein 0.5s, slideout 0.5s 2.5s;
 	animation: slidein 0.5s, slideout 0.5s 2.5s;
 }
-#updatedMessage {
-	visibility: hidden;
-	margin-left: -125px;
-	background-color: white;
+#errorM {
+	width:24%;
+	margin-left:33%;
+	margin-right:33%;
+	text-align:center;
+	background-color: #ffc9c6;
 	top: 2%;
-	border:3px solid black;
-	color: green;
-	text-align: center;
+	border:3px solid red;
+	color: red;
 	border-radius: 2px;
+	visibility:hidden;
 	padding: 16px;
 	position: fixed;
-	z-index: 1;
-	left: 50%;
 	font-size: 17px;
 	transition: 0.5s;
+	
 }
 
-#updatedMessage.show {
+#errorM.show {
 	visibility: visible;
-	-webkit-animation: slidein 0.5s, slideout 0.5s 2.5s;
-	animation: slidein 0.5s, slideout 0.5s 2.5s;
+	animation: shake 0.5s; 
+	animation-iteration-count: infinite; 
 }
 @-webkit-keyframes fadein {
 	from {bottom: 0;
@@ -123,7 +104,7 @@
 }
 
 to {
-	bottom: 30px;
+	bottom: 20px;
 	opacity: 1;
 }
 
@@ -133,12 +114,12 @@ to {
 }
 
 to {
-	bottom: 30px;
+	bottom: 20px;
 	opacity: 1;
 }
 
 }@-webkit-keyframes fadeout {
-	from {bottom: 30px;
+	from {bottom: 20px;
 	opacity: 1;
 }
 
@@ -148,7 +129,7 @@ to {
 }
 
 }@keyframes fadeout {
-	from {bottom: 30px;
+	from {bottom: 20px;
 	opacity: 1;
 }
 

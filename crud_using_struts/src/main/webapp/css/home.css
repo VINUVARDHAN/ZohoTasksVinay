@@ -4,19 +4,6 @@ input[type=number] {
 	-moz-appearance: textfield;
 }
 
-@keyframes main_tag_bg_color { 
-	0% {
-	background-color: #b0e3c8;
-}
-50% {
-	background-color: #aafafb;
-}
-100% {
-	background-color: #b0e3c8;
-}
-}
-
-
 body {
 	margin-left: 5%;
 	margin-right: 5%;
@@ -28,15 +15,15 @@ body {
 	height: 500px;
 	width: 0;
 	position: fixed;
-	top: 100px;
+	top: 150px;
 	right: 5%;
-	background-color: #111;
+	background-color: #282828;
 	overflow-x: hidden;
 	transition: 0.5s;
 	color: white;
-	opacity: 85%;
-	border-radius: 5%
-}
+	opacity: 90%;
+	border-radius: 5%;
+box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;}
 
 #search_results {
 	display: block;
@@ -49,18 +36,19 @@ body {
 	color: white;
 	opacity: 95%;
 	display: block;
+	 box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
 }
 
 .content_display {
 	width: 100%;
-	margin-top: 40px;
+	margin-top: 20px;
 	text-align: center;
 }
 
 .table_head {
 	height: 30px;
 	border: 1px solid black;
-	background-color: darkslategrey;
+	background-color: #202e2e;
 	color: white;
 }
 
@@ -70,7 +58,8 @@ body {
 }
 
 .data_table:hover {
-	color: blue;
+	transition:0.3s;
+	background-color: #eaecec;
 }
 
 .data_table:hover .edit_delete {
@@ -99,11 +88,11 @@ body {
 }
 
 .recent_update_data:hover {
-	color: blue;
+	color: black;
 }
 
 .recent_update_data:hover .edit_delete {
-	color: blue;
+	color: black;
 }
 
 .recent_update_data:hover .edit_delete:hover {
@@ -149,7 +138,9 @@ textarea:focus, input:focus {
 	outline: none;
 	border: 2px solid black;
 	-webkit-transition: 0.5s;
-	background-color: #b6fab5
+	background-color: #d7d9d9;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
+	
 }
 
 td th {
@@ -176,17 +167,65 @@ td th {
 
 /* FOR ALL BUTTONS*/
 button:hover {
-	border: 2px solid black;
-	box-shadow: 3px 3px #6d6d6d;
+	background-color:black;
+	color:white;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
 }
 
 button {
 	color: black;
-	background-color: #77c3bc;
+	background-color: #d8dada;
 	border: 2px solid black;
 }
-
-.efvaefr {
-	color: #aafafb;
+input {
+	text-align: center;
+	background-color: white;
+	border: 2px solid black;
+	
 }
-
+@keyframes userNotFound { 
+0% {
+	color: red;
+}
+10% {
+	color: white;
+}
+20% {
+	color: red;
+}
+30% {
+	color: white;
+}
+40% {
+	color: red;
+}
+50% {
+	color: white;
+}
+60% {
+	color: red;
+}
+70% {
+	color: white;
+}
+80% {
+	color: red;
+}
+90% {
+	color: white;
+}
+100% {
+	color: red;
+}
+}
+@keyframes main_tag_bg_color { 
+	0% {
+	background-color: #dae0de;
+}
+50% {
+	background-color: #b6b6b6;
+}
+100% {
+	background-color: #dae0de;
+}
+}

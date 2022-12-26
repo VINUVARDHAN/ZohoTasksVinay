@@ -10,9 +10,7 @@
 <meta charset="UTF-8">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous">
+	rel="stylesheet">
 
 <link rel="stylesheet" href="/crud_using_struts/css/home.css">
 <script src="/crud_using_struts/js/home.js">
@@ -26,14 +24,17 @@
 	<button class="close_button"
 		onclick="document.getElementById('search_results').style.height = '0px';">X</button>
 
+	<%
+	try {
+		if (session.getAttribute("sessionLogged") != null) {
+	%>
 	<div id="search_div_id">
 		<table class="content_display">
 			<%
-			try {
-				DBManagement db = new DBManagement();
-				LinkedList<DbStructure> data = db.search(request.getParameter("pattern"));
-				int size = data.size();
-				if (size > 0) {
+			DBManagement db = new DBManagement();
+			LinkedList<DbStructure> data = db.search(request.getParameter("pattern"));
+			int size = data.size();
+			if (size > 0) {
 			%>
 			<tbody>
 				<%
@@ -59,11 +60,19 @@
 			</tr>
 			<%
 			}
-			} catch (Exception e) {
-			System.out.println(e);
-			}
 			%>
 		</table>
+		<%
+		} else {
+		%>
+		<h4 style="animation: 4s infinite userNotFound; text-align: center; margin-top: 50px">Login
+			To access</h4>
+		<%
+		}
+		} catch (Exception e) {
+		System.out.println(e);
+		}
+		%>
 	</div>
 </body>
 </html>

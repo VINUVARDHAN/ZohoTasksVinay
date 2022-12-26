@@ -40,7 +40,7 @@ public class Lead{
 		this.action = action;
 	}
 
-	public String execute() {
+	public String range() {
 		return "success";
 	}
 

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+body {
+	margin-top: 3%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+#login {
+opacity:70%;
+	position: fixed;
+	width: 30%;
+	height: 250px;
+	margin-top: 20px;
+	right: 35%;
+	left: 35%;
+	background-color: black;
+	text-align: center;
+	color: white;
+	border-radius: 2%;
+	text-align: center;
+	margin-top: 20px;
+	transition: 1s;
+	overflow-x: hidden;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#signup {
+opacity:90%;
+	position: fixed;
+	width: 30%;
+	height: 0px;
+	margin-top: 20px;
+	right: 35%;
+	left: 35%;
+	background-color: black;
+	text-align: center;
+	color: white;
+	border-radius: 2%;
+	text-align: center;
+	margin-top: 20px;
+	transition: 1s;
+	overflow-x: hidden;
+	left: 35%;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.wwFormTable {
+	margin: auto
+}
+@keyframes main_tag_bg_color { 
+	0% {
+	background-color: #dae0de;
+}
+50% {
+	background-color: #b6b6b6;
+}
+100% {
+	background-color: #dae0de;
+}
+}

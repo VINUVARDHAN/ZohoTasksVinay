@@ -16,12 +16,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/crud_using_struts/css/home.css">
-<script src="/crud_using_struts/js/home.js">
-	
-</script>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+<script src="/crud_using_struts/js/home.js"></script>
 <style type="text/css">
 body {
 	margin-top: 3%;
@@ -33,22 +28,19 @@ body {
 <body>
 	<%
 	try {
-		if (session.getAttribute("sessionLogged") != null) {
-			int start = Integer.parseInt(request.getParameter("start"));
-			int range = Integer.parseInt(request.getParameter("range"));
-			range = (range > 20) ? 20 : range;
-			int end = start + range;
-			DBManagement db = new DBManagement();
-			LinkedList<DbStructure> data = db.getRangeOfData(start, range);
-			int size = data.size();
+		int start = Integer.parseInt(request.getParameter("start"));
+		int range = Integer.parseInt(request.getParameter("range"));
+		session.setAttribute("range", range);
+		int end = start + range;
+		DBManagement db = new DBManagement();
+		LinkedList<DbStructure> data = (LinkedList) session.getAttribute("FullLeadData");
+		int size = data.size();
 	%>
 	<table
 		style="width: 80%; margin-right: 10%; margin-left: 10%; margin-top: 40px; text-align: center">
 		<tr>
 			<td colspan="4">Total : <%=db.getDBSize()%> leads
 			</td>
-
-			<!-- Selecting no of records per page -->
 			<td><form action="myservlet.do" method="POST">
 					<select name="myselect" id="range_selection"
 						onchange="setPageRange();">
@@ -59,31 +51,26 @@ body {
 						<option value="20">20</option>
 					</select> Leads per page
 				</form></td>
-
-			<!-- Logic to display the next and previous button -->
 			<td style="float: right">
 				<%
 				if (start >= range) {
 				%><button style="width: 40px" type="button"
-					onclick="loadData(<%=start - range%>,'next',<%=range%>)"><<</button>
+					onclick="loadData(<%=start - range%>,'next',<%=range%>)"><</button>
 				<%
 				} else {
-				%><button style="width: 40px" title="no leads"><<</button> 
-				<%}%> 
-				<%=start + 1%> - <%=size + start%> 
-				<%
-				if (end < db.getDBSize()) {
- 				%>
+				%><button style="width: 40px" title="no leads"><</button> <%
+ }
+ %> <%=start + 1%> - <%=size + start%> <%
+ if (end < db.getDBSize()) {
+ %>
 				<button style="width: 40px" type="button"
-					onclick="loadData(<%=end%>,'prev',<%=range%>)">>></button> <%} 
-				else {
- 				%>
-				<button style="width: 40px" title="no leads">>></button> <%}%>
+					onclick="loadData(<%=end%>,'prev',<%=range%>)">></button> <%
+ } else {
+ %>
+				<button style="width: 40px" title="no leads">></button> <%}%>
 			</td>
 		</tr>
 	</table>
-
-	<!-- Content display page -->
 	<table class="content_display">
 		<tr>
 			<th></th>
@@ -94,9 +81,6 @@ body {
 			<th class="table_head">Email</th>
 		</tr>
 		<%
-		/* 
-		Here j is used both for display the data and providing unique id's for each row
-		*/
 		for (int j = 0; j < size; j++) {
 		%>
 		<tr class="data_table">
@@ -117,23 +101,15 @@ body {
 					<i class="fa">&#xf014;</i>
 				</button>
 			</td>
+
 		</tr>
 		<%
 		}
+		} catch (Exception e) {
+		System.out.print(e);
+		}
 		%>
-	</table>
-	<%
-	} else {
-	%>
-	<h3
-		style="animation: 4s infinite userNotFound; text-align: center; margin-top: 50px">Login
-		To access</h3>
-	<%
-	}
-	} catch (Exception e) {
-	System.out.print(e);
-	}
-	%>
 
+	</table>
 </body>
 </html>

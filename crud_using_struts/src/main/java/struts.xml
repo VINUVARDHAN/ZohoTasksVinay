@@ -21,6 +21,11 @@
 			<result name="input">jsp/Login.jsp</result>
 			<result name="error">jsp/Login.jsp</result>
 		</action>
+		<action name="logOut" class="com.app.SignIn"
+			method="logOut">
+			<result name="success">jsp/Login.jsp</result>
+			<result name="input">jsp/home.jsp</result>
+		</action>
 		<action name="insertRecord" class="com.app.Lead"
 			method="addLead">
 			<result name="success">jsp/getData.jsp</result>
@@ -30,13 +35,14 @@
 			method="deleteLead">
 			<result name="success">jsp/getData.jsp</result>
 			<result name="input">jsp/home.jsp</result>
+			<result name="fail"></result>
 		</action>
 		<action name="updateRecord" class="com.app.Lead"
 			method="updateLead">
 			<result name="success">jsp/getData.jsp</result>
 			<result name="input">jsp/home.jsp</result>
 		</action>
-		<action name="range" class="com.app.Lead" method="execute">
+		<action name="range" class="com.app.Lead" method="range">
 			<result name="success">jsp/getData.jsp</result>
 			<result name="input">js/home.js</result>
 		</action>
